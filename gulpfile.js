@@ -11,8 +11,7 @@ const gulp = require('gulp'),
     include = require('posthtml-include'),
     rename = require("gulp-rename"),
     webp = require("gulp-webp"),
-    htmlmin = require('gulp-htmlmin'),
-    imageResize = require('gulp-image-resize');
+    htmlmin = require('gulp-htmlmin');
 
 const html = () => {
         return gulp.src("./src/*.html")
@@ -68,16 +67,6 @@ const html = () => {
 
     },
 
-
-    imgresize = () => {
-        return gulp.src('src/images/**/*.{jpg,png}"')
-            .pipe(imageResize({
-                width: 900,
-                crop: false,
-                imageMagick: true
-            }))
-            .pipe(gulp.dest("build/images/"));
-    },
 
     img = () => {
         return gulp.src('src/images/**/*.*')
@@ -135,7 +124,6 @@ const html = () => {
 gulp.task('html', html);
 gulp.task('styles', styles);
 gulp.task('scripts', scripts);
-gulp.task('imgresize', imgresize);
 gulp.task('img', img);
 gulp.task('webp', imagewebp);
 gulp.task('copy', copy);
