@@ -12,9 +12,7 @@ const gulp = require('gulp'),
     rename = require("gulp-rename"),
     webp = require("gulp-webp"),
     htmlmin = require('gulp-htmlmin'),
-    criticalCss = require('gulp-critical-css'),
     imageResize = require('gulp-image-resize');
-
 
 const html = () => {
         return gulp.src("./src/*.html")
@@ -137,7 +135,7 @@ const html = () => {
 gulp.task('html', html);
 gulp.task('styles', styles);
 gulp.task('scripts', scripts);
-gulp.task('imgresize', imgresize)
+gulp.task('imgresize', imgresize);
 gulp.task('img', img);
 gulp.task('webp', imagewebp);
 gulp.task('copy', copy);
